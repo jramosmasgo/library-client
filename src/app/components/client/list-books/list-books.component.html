@@ -1,0 +1,13 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="page">
+  <h1 class="page_title">Lista de libros</h1>
+  <div class="page_container">
+    <div class="list-books">
+      <app-card-book
+        class="list-books_list-item"
+        *ngFor="let item of books"
+        [book]="item"
+      ></app-card-book>
+    </div>
+  </div>
+</div>

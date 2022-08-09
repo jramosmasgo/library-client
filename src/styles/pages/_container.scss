@@ -1,0 +1,30 @@
+@use "../utils/index" as var;
+
+.page {
+  margin-bottom: 5rem;
+
+  &_container {
+    min-height: 90vh;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  &_title {
+    font-size: 2.3rem;
+    position: relative;
+    margin-bottom: 3rem;
+    border-bottom: var.$border;
+    padding: 3.2rem 8rem;
+  }
+}
+
+@media (max-width: var.$phone) {
+  .page_container {
+    margin: 30px 10px;
+
+    &-title {
+      text-align: center;
+      padding: 2rem 0;
+    }
+  }
+}

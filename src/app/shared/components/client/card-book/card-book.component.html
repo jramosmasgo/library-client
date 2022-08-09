@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="icons">
+    <a href="#" class="fas fa-search"></a>
+    <a href="#" class="fas fa-heart"></a>
+    <a [routerLink]="['/client/book-detail', book.id]" class="fas fa-eye"></a>
+  </div>
+  <div class="image">
+    <img [src]="book.photo || 'assets/images/not-found.png'" alt="" />
+  </div>
+  <div class="content">
+    <h3>{{ book.title || "no title" }}</h3>
+    <div class="price">
+      S/. {{ book.price || "no price" }} <span>$20.99</span>
+    </div>
+    <button (click)="addBookCart(book)" class="btn">Agregar al Carrito</button>
+  </div>
+</div>

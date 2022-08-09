@@ -1,0 +1,41 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="page">
+  <h1 class="page_title">Detalles del Libro</h1>
+  <div class="page_container">
+    <div class="book-detail">
+      <div class="book-detail_container">
+        <div class="book-detail_container-image">
+          <img [src]="book.photo" alt="" />
+        </div>
+        <div class="book-detail_container-details">
+          <span class="category">{{ book.category?.name }}</span>
+          <div>
+            <h1 class="title">{{ book.title }}</h1>
+            <p class="author">{{ book.author?.name }}</p>
+          </div>
+          <span class="price">S/. {{ book.price }}</span>
+          <div class="description">
+            <span class="subtitle">Descripcion:</span>
+            <p>{{ book.description }}</p>
+          </div>
+          <div class="cantidad">
+            <p class="subtitle">Cantidad:</p>
+            <app-numeric-input
+              (valueEvent)="changeQuantity($event)"
+              [max]="book.stock"
+              [value]="book.quantity"
+            ></app-numeric-input>
+          </div>
+          <div class="buttons">
+            <button class="btn" (click)="addBookCart()">
+              <i class="fas fa-cart-plus"></i> Agregar al Carrito</button
+            >&nbsp;
+            <button class="btn btn-danger">
+              <i class="fas fa-heart"></i> Agregar a Favoritos
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

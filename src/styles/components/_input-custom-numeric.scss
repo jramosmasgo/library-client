@@ -1,0 +1,15 @@
+@use "../utils/index" as var;
+
+.input_numeric {
+  font-size: 1.2rem;
+  button {
+    background: var.$green;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+  }
+  input {
+    width: 30px;
+    text-align: center;
+  }
+}

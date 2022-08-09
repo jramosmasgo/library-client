@@ -1,0 +1,25 @@
+@use "../utils/index" as var;
+
+.list-books {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.list-books_list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: var.$tablet) {
+  .list-books {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: var.$phone) {
+  .list-books {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

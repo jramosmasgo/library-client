@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="header__one">
+    <a href="" class="logo"><i class="fas fa-book"></i> El Virrey</a>
+    <form action="" class="search-form">
+      <input type="search" placeholder="Buscar aqui ...." id="search-box" />
+      <label for="search-box" class="fas fa-search"></label>
+    </form>
+    <div class="icons">
+      <div id="search-btn" class="fas fa-search"></div>
+      <a href="#" class="fas fa-heart"></a>
+      <a routerLink="/client/cart" class="fas fa-shopping-cart"></a>
+      <div (click)="openCloseAuthForm()" class="fas fa-user"></div>
+    </div>
+  </div>
+  <div class="header__two" #navbar>
+    <nav class="navbar">
+      <a
+        [routerLink]="['/client', 'home']"
+        routerLinkActive="router-link-active"
+        href="#home"
+        >Home</a
+      >
+      <a [routerLink]="['/client', 'books']">Libros</a>
+      <a href="#arrivals"> Nuevos </a>
+      <a href="#reviews">Reviewes</a>
+    </nav>
+  </div>
+</header>
+<div class="login-form-container" #authForm>
+  <div
+    (click)="openCloseAuthForm()"
+    id="close-login-btn"
+    class="fas fa-times"
+  ></div>
+  <app-auth></app-auth>
+</div>
+<app-navbar-mobile></app-navbar-mobile>

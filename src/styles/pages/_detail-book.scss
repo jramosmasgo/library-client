@@ -1,0 +1,99 @@
+@use "../utils/index" as var;
+
+.book-detail {
+  &_container {
+    border: var.$border;
+    box-shadow: var.$box-shadow;
+    border-radius: 5px;
+    width: 85%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    &-image {
+      grid-column: 1/3;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin: 20px 0;
+        height: 450px;
+        width: 300px;
+        object-fit: cover;
+      }
+    }
+
+    &-details {
+      margin: 30px;
+      grid-column: 3/7;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .subtitle {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .description {
+        p {
+          font-size: 1.3rem;
+          margin-top: 10px;
+          color: rgba(0, 0, 0, 0.637);
+        }
+      }
+      .buttons {
+        button {
+          width: max-content;
+        }
+      }
+      .category {
+        background: var.$green;
+        width: max-content;
+        color: #fff;
+        padding: 5px 15px;
+        font-size: 1.4rem;
+      }
+      .title {
+        font-size: 3rem;
+      }
+      .author {
+        font-size: 1.5rem;
+        color: rgba(0, 0, 0, 0.637);
+      }
+      .price {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: var.$tablet) {
+  .book-detail {
+    &_container {
+      &-image {
+        grid-column: 1/4;
+      }
+      &-details {
+        grid-column: 4/7;
+      }
+    }
+  }
+}
+
+@media (max-width: var.$phone) {
+  .book-detail {
+    &_container {
+      width: 100%;
+      &-image {
+        grid-column: 1/7;
+      }
+      &-details {
+        grid-column: 1/7;
+        margin-top: 0;
+      }
+    }
+  }
+}

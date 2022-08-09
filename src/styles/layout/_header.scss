@@ -1,0 +1,94 @@
+@use "../utils/index" as var;
+
+.header {
+  &__one {
+    background: #fff;
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      color: var.$dark;
+
+      i {
+        color: var.$green;
+      }
+    }
+
+    .search-form {
+      width: 50rem;
+      height: 5rem;
+      // border: var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-radius: 0.5rem;
+
+      input {
+        font-size: 1.6rem;
+        padding: 0 1.2rem;
+        height: 100%;
+        width: 100%;
+        text-transform: none;
+        color: var.$dark;
+      }
+
+      label {
+        font-size: 2.5rem;
+        padding-right: 1.5rem;
+        color: var.$dark;
+        cursor: pointer;
+
+        &hover {
+          color: var.$green;
+        }
+      }
+    }
+
+    .icons {
+      div,
+      a {
+        font-size: 2.4rem;
+        margin-left: 1.5rem;
+        color: var.$dark;
+        cursor: pointer;
+
+        &:hover {
+          color: var.$lightgreen;
+        }
+      }
+    }
+  }
+
+  &__two {
+    background: var.$green;
+
+    .navbar {
+      text-align: center;
+      a {
+        color: #fff;
+        display: inline-block;
+        padding: 1.2rem;
+        font-size: 1.7rem;
+
+        &:hover {
+          background: var.$dark;
+        }
+      }
+    }
+  }
+}
+
+.activate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+#search-btn {
+  display: none;
+}

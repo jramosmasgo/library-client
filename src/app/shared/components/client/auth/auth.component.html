@@ -1,0 +1,83 @@
+<form *ngIf="!registerActive" [formGroup]="loginForm" (ngSubmit)="login()">
+  <h3>Inico de sesión</h3>
+  <span>Correo electronico</span>
+  <input
+    formControlName="email"
+    type="email"
+    placeholder="ingrese su correo electronico"
+    class="box"
+  />
+  <p class="message-error" *ngIf="validateDataLogin('email')">
+    El campo es obligatorio
+  </p>
+  <span>Contraseña</span>
+  <input
+    formControlName="password"
+    type="password"
+    placeholder="ingresa tu contaseña"
+    class="box"
+  />
+  <p class="message-error" *ngIf="validateDataLogin('password')">
+    El campo es obligatorio
+  </p>
+  <div class="checkbox">
+    <input type="checkbox" id="remember-me" />
+    <label for="remember-me">Recuerdame</label>
+  </div>
+  <input type="submit" value="Ingresar" class="btn" />
+  <p>olvido su contrasenia? <a href="#">click here</a></p>
+  <p>no tiene una cuenta? <a (click)="changeForm()">registrese aqui</a></p>
+</form>
+
+<form *ngIf="registerActive" [formGroup]="registerForm" (ngSubmit)="register()">
+  <h3>Registro de usuario</h3>
+  <span>Correo electronico</span>
+  <input
+    formControlName="email"
+    type="email"
+    class="box"
+    placeholder="ingrese su correo electronico"
+  />
+  <p class="message-error" *ngIf="validateDataRegister('email')">
+    El campo es requerido
+  </p>
+  <span>Nombre completo</span>
+  <input
+    formControlName="userName"
+    type="text"
+    class="box"
+    placeholder="ingrese su nombre completo"
+  />
+  <p class="message-error" *ngIf="validateDataRegister('userName')">
+    El campo oblgatorio de 3 a 30 caracteres
+  </p>
+  <span>Contraseña</span>
+  <input
+    formControlName="password"
+    type="password"
+    class="box"
+    placeholder="ingresa una contraseña"
+  />
+  <p class="message-error" *ngIf="validateDataRegister('confirmPassword')">
+    El campo es obligatorio
+  </p>
+  <span>repita la contraseña</span>
+  <input
+    formControlName="confirmPassword"
+    type="password"
+    class="box"
+    placeholder="repita la contraseña"
+  />
+  <p class="message-error" *ngIf="validateDataRegister('password')">
+    El campo es obligatorio
+  </p>
+  <div class="checkbox">
+    <input type="checkbox" name="" id="remember-me" />
+    <label for="remember-me">recuerdame</label>
+  </div>
+  <input type="submit" value="sign in" class="btn" />
+  <p>
+    ya tiene un cuenta?
+    <a (click)="changeForm()">Inicie sesión aqui</a>
+  </p>
+</form>

@@ -1,0 +1,80 @@
+@use "../utils/index" as var;
+
+.box {
+  width: 28rem;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  border: var.$border;
+  text-align: center;
+
+  &:hover {
+    border: var.$border-hover;
+
+    .image {
+      transform: translateY(6rem);
+    }
+
+    .icons {
+      transform: translateY(0%);
+    }
+  }
+
+  .content {
+    background: #eee;
+    padding: 1.8rem;
+
+    .price {
+      font-size: 2.2rem;
+      color: var.$dark;
+      padding-top: 1rem;
+    }
+
+    span {
+      font-size: 1.5rem;
+      color: var.$lightgreen;
+      text-decoration: line-through;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: var.$dark;
+    }
+  }
+
+  .image {
+    padding: 1rem;
+    background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+
+    img {
+      height: 35rem;
+      width: 22rem;
+      object-fit: cover;
+    }
+  }
+
+  .icons {
+    border-bottom: var.$border-hover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1;
+    transform: translateY(-100%);
+
+    &:hover {
+      background: #fff;
+      color: var.$green;
+    }
+
+    a {
+      color: var.$dark;
+      font-size: 2.2rem;
+      margin: 1.3rem 1.5rem;
+      &:hover {
+        color: var.$green;
+      }
+    }
+  }
+}
